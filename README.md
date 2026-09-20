@@ -4,18 +4,7 @@ Step-by-Step Implementation
 1. Wazuh Detection Engineering
 Configured /var/ossec/etc/rules/local_rules.xml to catch repeated SSH failures within a 60-second window:
 
-<group name="local,syslog,sshd,">
-  <rule id="100002" level="10" frequency="5" timeframe="60">
-    <if_matched_sid>5710</if_matched_sid>
-    <description>SOC Project Alert: SSH Authentication Failure Detected</description>
-    <mitre>
-      <id>T1110</id>
-      <tactic>Credential Access</tactic>
-      <technique>Brute Force</technique>
-    </mitre>
-    <group>authentication_failures,</group>
-  </rule>
-</group>
+wazuh/local_rules.xml
 
 2. Wazuh-to-Shuffle Integration Hook
 In /var/ossec/etc/ossec.conf:
