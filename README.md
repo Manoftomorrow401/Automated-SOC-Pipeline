@@ -4,17 +4,12 @@ Step-by-Step Implementation
 1. Wazuh Detection Engineering
 Configured /var/ossec/etc/rules/local_rules.xml to catch repeated SSH failures within a 60-second window:
 
-wazuh/local_rules.xml
+Please check wazuh/local_rules.xml for rule code
 
 2. Wazuh-to-Shuffle Integration Hook
 In /var/ossec/etc/ossec.conf:
 
-<integration>
-  <name>custom-shuffle</name>
-  <rule_id>100002</rule_id>
-  <hook_url>http://<SHUFFLE_HOST>:3001/api/v1/hooks/webhook_<HOOK_ID></hook_url>
-  <alert_format>json</alert_format>
-</integration>
+Please check wazuh/ossec_integration_snippet.xml
 
 3. Shuffle SOAR Workflow Configuration
 Trigger: Webhook receiving Wazuh alert JSON ($exec).
