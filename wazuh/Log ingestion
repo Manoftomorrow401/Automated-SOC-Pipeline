@@ -1,3 +1,7 @@
 sudo nano /var/ossec/etc/ossec.conf
 
 Need to copy below block if it is not available
+<localfile>
+  <log_format>syslog</log_format>
+  <location>/var/log/auth.log</location>
+</localfile>
